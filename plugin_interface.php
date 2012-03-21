@@ -39,8 +39,7 @@ function am_settings_page() {
 ?>
 <div class="wrap">
 <h2>Any Mobile Theme Switcher</h2>
-<?php /*?><p><em>Like this plugin? Help support it <a href="http://www.jeremyarntz.com/plugins/donate/" target="_new">by donating to the developer</a>. 
-Donations help cover the cost of maintaining and developing new plugin features. Every donation is appreciated!</em></p><?php */?>
+<p><em><b>This Plugin is FREE and always will be. Support this plugin by <a href="http://dineshkarki.com.np/donate" target="_blank">donating</a>. Any Amount is Appreciated.</b></em></p>
 
 <form method="post" action="options.php">
     <?php settings_fields( 'am-settings-group' ); ?>

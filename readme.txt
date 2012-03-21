@@ -1,16 +1,16 @@
 === Plugin Name ===
 Contributors: dnesscarkey
-Donate link: http://dineshkarki.com.np
+Donate link: http://dineshkarki.com.np/donate
 Tags: mobile, theme, switcher, mobile-browser
 Requires at least: 3.0.
 Tested up to: 3.3.1
-Stable tag: 0.1
+Stable tag: 0.2
 
 This Plugin detects mobile browser and display the theme as the setting done from admin.
 
 == Description ==
 
-This plugin was devloped for one of the project of mine. Found many plugins for theme switcher but they were not able to detect all the mobile browsers. And thought to add here to help others.
+This plugin was developed for one of the project of mine. Found many plugins for theme switcher but they were not able to detect all the mobile browsers. And thought to add here to help others.
 
 Detects all the Mobile Browsers.
 
@@ -39,9 +39,12 @@ Yes it detect most of the browsers.
 
 == Screenshots ==
 
-1. hagsdahgsd
+1. Admin Setting
 
 == Changelog ==
 
 = 0.1 =
 * First Release
+
+= 0.2 =
+* Fixed Links
