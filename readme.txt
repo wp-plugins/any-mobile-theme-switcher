@@ -3,7 +3,7 @@ Contributors: dnesscarkey
 Donate link: http://dineshkarki.com.np
 Tags: mobile, theme, switcher, mobile-browser
 Requires at least: 3.0.
-Tested up to: 3.2.1
+Tested up to: 3.3.1
 Stable tag: 0.1
 
 This Plugin detects mobile browser and display the theme as the setting done from admin.
