@@ -9,8 +9,10 @@ Stable tag: 0.2
 This Plugin detects mobile browser and display the theme as the setting done from admin.
 
 == Description ==
+Update in 0.3
+* Added Support to get theme switch link from shortcode.
 
-This plugin was developed for one of the project of mine. Found many plugins for theme switcher but they were not able to detect all the mobile browsers. And thought to add here to help others.
+Found many plugins for theme switcher but they were not able to detect all the mobile browsers. And thought to add here to help others.
 
 Detects all the Mobile Browsers.
 
@@ -28,7 +30,7 @@ This plugin is still a child. Please report any bugs @ http://dineshkarki.com.np
 
 == Installation ==
 
-1. Upload the theme files to the `/wp-content/plugins/` directory
+1. Upload the plugin files to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Select Themes For Mobile Browsers under Settings Menu
 
@@ -43,8 +45,11 @@ Yes it detect most of the browsers.
 
 == Changelog ==
 
-= 0.1 =
-* First Release
+= 0.3 =
+* Added Support to get theme switch link from shortcode.
 
 = 0.2 =
 * Fixed Links
+
+= 0.1 =
+* First Release

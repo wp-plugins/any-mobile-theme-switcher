@@ -4,7 +4,7 @@ Plugin Name: Any Mobile Theme Switcher
 Plugin URI: http://www.dineshkarki.com.np/any-mobile-theme-switcher
 Description: This plugin allow you to detect all mobile platform and switch the theme. Supports most of the mobile platform including iphone, ipad, ipod, windows mobile, parm os, blackberry, android.
 Author: Dinesh Karki
-Version: 0.2
+Version: 0.3
 Author URI: http://www.dineshkarki.com.np
 */
 
@@ -24,8 +24,13 @@ Author URI: http://www.dineshkarki.com.np
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+if (!session_id()){
+    session_start();
+}
+
 $mobile_browser	  = '';
 $mobileredirect   = '';
+$status			  = '';	
 $user_agent       = $_SERVER['HTTP_USER_AGENT']; // get the user agent value - this should be cleaned to ensure no nefarious input gets executed
 $accept           = $_SERVER['HTTP_ACCEPT']; // get the content accept value - this should be cleaned to ensure no nefarious input gets executed
 
@@ -88,11 +93,26 @@ $accept           = $_SERVER['HTTP_ACCEPT']; // get the content accept value - t
 	
 } // ends the switch 
 
-//echo $mobile_browser;
-if (!empty($mobile_browser)){
-	add_filter('stylesheet', 'loadMobileTheme');
-	add_filter('template', 'loadMobileTheme');	
+//Force Theme Display request from visitor.
+if ($_GET['am_force_theme_layout']){
+	$_SESSION['am_force_theme_layout']	=	$_GET['am_force_theme_layout'];
 }
+
+if (isset($_SESSION['am_force_theme_layout'])){ //IF USER FORCE FOR THE THEME
+	if ($_SESSION['am_force_theme_layout'] == 'mobile'){ // IF FORCED THEME IS MOBILE
+		$mobile_browser = get_option('iphone_theme');
+		add_filter('stylesheet', 'loadMobileTheme');
+		add_filter('template', 'loadMobileTheme');
+		$shown_theme = 'mobile';
+	}	
+} else { // NORMAL THEME [PLUGIN DEFAULT]
+	if (!empty($mobile_browser)){
+		add_filter('stylesheet', 'loadMobileTheme');
+		add_filter('template', 'loadMobileTheme');
+		$shown_theme = 'mobile';
+	}
+}
+
 
 function loadMobileTheme(){
 	global $mobile_browser;
@@ -104,6 +124,23 @@ function loadMobileTheme(){
 	  }
 	}	
 }
+
+// Embed Switch Links in Theme Via Shortcode
+// [show_theme_switch_link]
+function show_theme_switch_link_func( $atts ){
+ 	$desktopSwitchLink	= get_option('show_switch_link_for_desktop');
+	global $shown_theme;
+	global $status;
+	if ($shown_theme){
+		$return = '<a rel="external" data-ajax="false" href="'.get_bloginfo('url').'?am_force_theme_layout=desktop" class="am-switch-btn godesktop">'.get_option('desktop_view_theme_link_text').'</a>';		
+	} else {
+		if ((!empty($status)) || ($desktopSwitchLink == 'yes')){
+			$return = '<a href="'.get_bloginfo('url').'?am_force_theme_layout=mobile" class="am-switch-btn gomobile">'.get_option('mobile_view_theme_link_text').'</a>';
+		}
+	}
+	return $return;
+}
+add_shortcode('show_theme_switch_link', 'show_theme_switch_link_func');
 
 include('plugin_interface.php');
 ?>
