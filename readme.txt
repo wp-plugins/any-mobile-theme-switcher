@@ -26,7 +26,7 @@ Detects all the Mobile Browsers.
 
 You can select a different mobile theme for each mobile browser. You can select different themes for each of the options above.
 
-This plugin is still a child. Please report any bugs @ http://dineshkarki.com.np/any-mobile-theme-switcher/report-bugs.
+This plugin is still a child. Please report any bugs @ http://dineshkarki.com.np/plugins/any-mobile-theme-switcher/report-bugs.
 
 == Installation ==
 
