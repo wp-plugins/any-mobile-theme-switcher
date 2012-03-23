@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Any Mobile Theme Switcher ===
 Contributors: dnesscarkey
 Donate link: http://dineshkarki.com.np/donate
 Tags: mobile, theme, switcher, mobile-browser
@@ -36,7 +36,8 @@ This plugin is still a child. Please report any bugs @ http://dineshkarki.com.np
 
 == Frequently Asked Questions ==
 
-= Does it detect all browsers ?
+= Does it detect all browsers ? =
+
 Yes it detect most of the browsers.
 
 == Screenshots ==
