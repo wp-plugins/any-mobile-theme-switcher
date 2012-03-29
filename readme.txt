@@ -30,8 +30,8 @@ This plugin is still a child. Please report any bugs @ http://dineshkarki.com.np
 
 == Installation ==
 
-1. Upload the plugin Any Mobile Theme Switcher's files to the `/wp-content/plugins/` directory
-1. Activate the Any Mobile Theme Switcher plugin through the 'Plugins' menu in WordPress.
+1. Upload the plugin any-mobile-theme-switcher files to the `/wp-content/plugins/` directory
+1. Activate the any-mobile-theme-switcher plugin through the 'Plugins' menu in WordPress.
 1. Select Themes For Mobile Browsers under under Settings > Any Mobile Theme
 
 == Frequently Asked Questions ==
