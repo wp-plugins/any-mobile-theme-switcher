@@ -5,8 +5,6 @@ add_action('admin_menu', 'any_mobile_create_menu');
 function any_mobile_create_menu() {
 	add_options_page('Any Mobile Theme', 'Any Mobile Theme', 'administrator', __FILE__, 'am_settings_page');
 	add_action('admin_init', 'register_mysettings_theme');
-	//add_options_page('Mobile Theme', 'Mobile Theme', 'administrator', __FILE__, 'am_settings_page');
-	//add_action('admin_init', 'register_mysettings_theme');
 }
 
 
@@ -17,7 +15,7 @@ function register_mysettings_theme() {
 	register_setting('am-settings-group', 'blackberry_theme');
 	register_setting('am-settings-group', 'windows_theme');
 	register_setting('am-settings-group', 'opera_theme');
-	register_setting('am-settings-group', 'palm_theme');
+	register_setting('am-settings-group', 'parm_os_theme');
 	register_setting('am-settings-group', 'other_theme');
 	register_setting('am-settings-group', 'mobile_view_theme_link_text');
 	register_setting('am-settings-group', 'desktop_view_theme_link_text');
@@ -31,7 +29,8 @@ function am_settings_page() {
 	$blackberryTheme	= get_option('blackberry_theme');
 	$windowsTheme		= get_option('windows_theme');
 	$operaTheme			= get_option('opera_theme');
-	$palmTheme			= get_option('palm_theme');
+	$palmTheme			= get_option('parm_os_theme');
+	$otherTheme			= get_option('other_theme');	
 	$mobileThemeText	= get_option('mobile_view_theme_link_text');
 	$desktopThemeText	= get_option('desktop_view_theme_link_text');	
 	$desktopSwitchLink	= get_option('show_switch_link_for_desktop');	
@@ -74,7 +73,7 @@ function am_settings_page() {
         <tr valign="top">
         <th scope="row">iPhone/iPod Touch Theme:</th>
         <td>
-        	<select name="iphone_theme"  />
+        	<select name="iphone_theme">
      <?php 
       foreach ($themeNames as $themeName) {              
           if (($iphoneTheme == $themeName) || (($iphoneTheme == '') && ($themeName == $defaultTheme))) {
@@ -91,7 +90,7 @@ function am_settings_page() {
         <tr valign="top">
         <th scope="row">iPad Theme</th>
         <td>
-        	<select name="ipad_theme"  />
+        	<select name="ipad_theme">
      <?php 
       foreach ($themeNames as $themeName) {              
           if (($ipadTheme == $themeName) || (($ipadTheme == '') && ($themeName == $defaultTheme))) {
@@ -108,7 +107,7 @@ function am_settings_page() {
         <tr valign="top">
         <th scope="row">Android Theme</th>
         <td>
-        	<select name="android_theme"  />
+        	<select name="android_theme">
      <?php 
       foreach ($themeNames as $themeName) {              
           if (($androidTheme == $themeName) || (($androidTheme == '') && ($themeName == $defaultTheme))) {
@@ -126,7 +125,7 @@ function am_settings_page() {
 		<tr valign="top">
         <th scope="row">Blackberry Theme</th>
         <td>
-        	<select name="blackberry_theme"  />
+        	<select name="blackberry_theme">
      <?php 
       foreach ($themeNames as $themeName) {              
           if (($blackberryTheme == $themeName) || (($blackberryTheme == '') && ($themeName == $defaultTheme))) {
@@ -144,7 +143,7 @@ function am_settings_page() {
         <tr valign="top">
         <th scope="row">Windows Mobile Theme</th>
         <td>
-        	<select name="windows_theme"  />
+        	<select name="windows_theme">
 			 <?php 
               foreach ($themeNames as $themeName) {              
                   if (($windowsTheme == $themeName) || (($windowsTheme == '') && ($themeName == $defaultTheme))) {
@@ -161,7 +160,7 @@ function am_settings_page() {
         <tr valign="top">
         <th scope="row">Opera Mini Theme</th>
         <td>
-        	<select name="opera_theme"  />
+        	<select name="opera_theme">
 			 <?php 
               foreach ($themeNames as $themeName) {              
                   if (($operaTheme == $themeName) || (($operaTheme == '') && ($themeName == $defaultTheme))) {
@@ -178,7 +177,7 @@ function am_settings_page() {
         <tr valign="top">
         <th scope="row">Parm Os Theme</th>
         <td>
-        	<select name="parm_theme"  />
+        	<select name="parm_os_theme">
 			 <?php 
               foreach ($themeNames as $themeName) {              
                   if (($palmTheme == $themeName) || (($palmTheme == '') && ($themeName == $defaultTheme))) {
@@ -195,7 +194,7 @@ function am_settings_page() {
         <tr valign="top">
         <th scope="row">Other Mobile Device Theme</th>
         <td>
-        	<select name="other_theme"  />
+        	<select name="other_theme">
 			 <?php 
               foreach ($themeNames as $themeName) {              
                   if (($otherTheme == $themeName) || (($otherTheme == '') && ($themeName == $defaultTheme))) {
@@ -244,7 +243,7 @@ function am_settings_page() {
 	Use the following shortcode <strong>[show_theme_switch_link]</strong> in templates to show the theme switch link.    
     <br/>Example: <strong>&lt;?php echo do_shortcode('[show_theme_switch_link]'); ?&gt;</strong>
     <br/><br/>
-	You can also add Switch Mobile Theme link to your theme from Custom Links section under Appearance > Menus.<br />
+	You can also add Switch Mobile Theme link to your Menus from Custom Links section under Appearance > Menus.<br />
 	Example:<br />
 	Url : <strong>http://yoursitename.com/?am_force_theme_layout=desktop</strong> (For Mobile Theme)<br/>
     Url : <strong>http://yoursitename.com/?am_force_theme_layout=mobile</strong>  (For Desktop Theme)<br/>

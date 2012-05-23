@@ -3,12 +3,16 @@ Contributors: dnesscarkey
 Donate link: http://dineshkarki.com.np/donate
 Tags: mobile theme, switcher, mobile-browser
 Requires at least: 3.0.
-Tested up to: 3.3.1
-Stable tag: 0.3
+Tested up to: 3.3.2
+Stable tag: 0.4
 
 This Plugin detects mobile browser and display the theme as the setting done from admin. Usefull for switch to Mobile Theme. 
 
 == Description ==
+Update in 0.4
+* Added Support For Child Theme
+* Error Fixes.
+
 Update in 0.3
 * Added Support to get mobile theme / desktop theme switch link from shortcode.
 
@@ -26,7 +30,9 @@ Detects all the Mobile Browsers and loads the mobile theme as per your settings 
 
 You can select a different mobile theme for each mobile browser. You can select different mobile themes for each of the options above.
 
-This plugin is still a child. Please report any bugs @ http://dineshkarki.com.np/plugins/any-mobile-theme-switcher/report-bugs.
+Please report any bugs @ http://dineshkarki.com.np/plugins/any-mobile-theme-switcher/report-bugs.
+
+Click <a href="http://dineshkarki.com.np/donate">here</a> to support this plugin.
 
 == Installation ==
 
@@ -45,6 +51,10 @@ Yes it detect most of the mobile browsers and redirects it to its mobile theme s
 1. Admin Setting For Mobile Theme selection repective to their platform.
 
 == Changelog ==
+
+= 0.3 =
+* Added Child Theme Support
+* Error Fixes
 
 = 0.3 =
 * Added Support to get mobile theme / desktop theme switch link from shortcode.

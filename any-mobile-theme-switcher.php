@@ -4,7 +4,7 @@ Plugin Name: Any Mobile Theme Switcher
 Plugin URI: http://dineshkarki.com.np/plugins/any-mobile-theme-switcher
 Description: This plugin allow you to detect all mobile platform and switch the theme. Supports most of the mobile platform including iphone, ipad, ipod, windows mobile, parm os, blackberry, android.
 Author: Dinesh Karki
-Version: 0.3
+Version: 0.4
 Author URI: http://www.dineshkarki.com.np
 */
 
@@ -62,7 +62,7 @@ $accept           = $_SERVER['HTTP_ACCEPT']; // get the content accept value - t
     break; // break out and skip the rest if we've had a match on blackberry
 
     case (preg_match('/(pre\/|palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine)/i',$user_agent)); // we find palm os in the user agent - the i at the end makes it case insensitive
-      $mobile_browser = get_option('palm_theme'); // mobile browser is either true or false depending on the setting of palm when calling the function
+      $mobile_browser = get_option('parm_os_theme'); // mobile browser is either true or false depending on the setting of palm when calling the function
       $status = 'Palm';      
     break; // break out and skip the rest if we've had a match on palm os
 
@@ -101,18 +101,28 @@ if ($_GET['am_force_theme_layout']){
 if (isset($_SESSION['am_force_theme_layout'])){ //IF USER FORCE FOR THE THEME
 	if ($_SESSION['am_force_theme_layout'] == 'mobile'){ // IF FORCED THEME IS MOBILE
 		$mobile_browser = get_option('iphone_theme');
-		add_filter('stylesheet', 'loadMobileTheme');
+		add_filter('stylesheet', 'loadMobileStyle');
 		add_filter('template', 'loadMobileTheme');
 		$shown_theme = 'mobile';
 	}	
 } else { // NORMAL THEME [PLUGIN DEFAULT]
 	if (!empty($mobile_browser)){
-		add_filter('stylesheet', 'loadMobileTheme');
+		add_filter('stylesheet', 'loadMobileStyle');
 		add_filter('template', 'loadMobileTheme');
 		$shown_theme = 'mobile';
 	}
 }
 
+function loadMobileStyle(){
+	global $mobile_browser;
+	$mobileTheme =  $mobile_browser;
+	$themeList = get_themes();
+	foreach ($themeList as $theme) {
+	  if ($theme['Name'] == $mobileTheme) {
+	      return $theme['Stylesheet'];
+	  }
+	}	
+}
 
 function loadMobileTheme(){
 	global $mobile_browser;
@@ -120,7 +130,7 @@ function loadMobileTheme(){
 	$themeList = get_themes();
 	foreach ($themeList as $theme) {
 	  if ($theme['Name'] == $mobileTheme) {
-	      return $theme['Stylesheet'];
+	      return $theme['Template'];
 	  }
 	}	
 }
