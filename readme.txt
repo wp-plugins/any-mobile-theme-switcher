@@ -10,7 +10,7 @@ This Plugin detects mobile browser and display the theme as the setting done fro
 
 == Description ==
 
-Thanks to <a href="http://wework4web.com">wework4web</a> for supporting plugin developement.
+Thanks to <a href="http://wework4web.com" target="_blank">wework4web</a> for supporting plugin developement.
 
 Update in 0.4
 * Added Support For Child Theme
