@@ -9,6 +9,9 @@ Stable tag: 0.4
 This Plugin detects mobile browser and display the theme as the setting done from admin. Usefull for switch to Mobile Theme. 
 
 == Description ==
+
+Thanks to <a href="http://wework4web.com">wework4web</a> for supporting plugin developement.
+
 Update in 0.4
 * Added Support For Child Theme
 * Error Fixes.
