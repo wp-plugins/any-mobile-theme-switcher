@@ -1,6 +1,5 @@
 === Any Mobile Theme Switcher ===
 Contributors: dnesscarkey
-Donate link: http://dineshkarki.com.np/license/
 Tags: mobile theme, switcher, mobile-browser
 Requires at least: 3.0.
 Tested up to: 3.4
@@ -29,8 +28,6 @@ Detects all the Mobile Browsers and loads the mobile theme as per your settings 
 You can select a different mobile theme for each mobile browser. You can select different mobile themes for each of the options above.
 
 Please report any bugs @ http://dineshkarki.com.np/plugins/any-mobile-theme-switcher/report-bugs.
-
-Click <a href="http://dineshkarki.com.np/donate">here</a> to support this plugin.
 
 == Installation ==
 
