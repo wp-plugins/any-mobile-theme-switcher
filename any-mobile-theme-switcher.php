@@ -4,25 +4,11 @@ Plugin Name: Any Mobile Theme Switcher
 Plugin URI: http://dineshkarki.com.np/plugins/any-mobile-theme-switcher
 Description: This plugin allow you to detect all mobile platform and switch the theme. Supports most of the mobile platform including iphone, ipad, ipod, windows mobile, parm os, blackberry, android.
 Author: Dinesh Karki
-Version: 0.4
+Version: 0.5
 Author URI: http://www.dineshkarki.com.np
 */
 
-/*  Copyright 2012  Dinesh Karki  (email : dnesskarki@gmail.com)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
-    published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
+/*  Copyright 2012  Dinesh Karki  (email : dnesskarki@gmail.com)*/
 
 if (!session_id()){
     session_start();
@@ -93,23 +79,26 @@ $accept           = $_SERVER['HTTP_ACCEPT']; // get the content accept value - t
 	
 } // ends the switch 
 
-//Force Theme Display request from visitor.
-if ($_GET['am_force_theme_layout']){
-	$_SESSION['am_force_theme_layout']	=	$_GET['am_force_theme_layout'];
-}
-
-if (isset($_SESSION['am_force_theme_layout'])){ //IF USER FORCE FOR THE THEME
-	if ($_SESSION['am_force_theme_layout'] == 'mobile'){ // IF FORCED THEME IS MOBILE
-		$mobile_browser = get_option('iphone_theme');
-		add_filter('stylesheet', 'loadMobileStyle');
-		add_filter('template', 'loadMobileTheme');
-		$shown_theme = 'mobile';
-	}	
-} else { // NORMAL THEME [PLUGIN DEFAULT]
-	if (!empty($mobile_browser)){
-		add_filter('stylesheet', 'loadMobileStyle');
-		add_filter('template', 'loadMobileTheme');
-		$shown_theme = 'mobile';
+$am_license_key_status		= get_option('am_license_key_status');
+if (($am_license_key_status != 'trial_expired') && ($am_license_key_status != 'expired')){
+	//Force Theme Display request from visitor.
+	if ($_GET['am_force_theme_layout']){
+		$_SESSION['am_force_theme_layout']	=	$_GET['am_force_theme_layout'];
+	}
+	
+	if (isset($_SESSION['am_force_theme_layout'])){ //IF USER FORCE FOR THE THEME
+		if ($_SESSION['am_force_theme_layout'] == 'mobile'){ // IF FORCED THEME IS MOBILE
+			$mobile_browser = get_option('iphone_theme');
+			add_filter('stylesheet', 'loadMobileStyle');
+			add_filter('template', 'loadMobileTheme');
+			$shown_theme = 'mobile';
+		}	
+	} else { // NORMAL THEME [PLUGIN DEFAULT]
+		if (!empty($mobile_browser)){
+			add_filter('stylesheet', 'loadMobileStyle');
+			add_filter('template', 'loadMobileTheme');
+			$shown_theme = 'mobile';
+		}
 	}
 }
 

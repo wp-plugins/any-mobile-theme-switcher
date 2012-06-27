@@ -1,16 +1,20 @@
 === Any Mobile Theme Switcher ===
 Contributors: dnesscarkey
-Donate link: http://dineshkarki.com.np/donate
+Donate link: http://dineshkarki.com.np/license/
 Tags: mobile theme, switcher, mobile-browser
 Requires at least: 3.0.
-Tested up to: 3.3.2
-Stable tag: 0.4
+Tested up to: 3.4
+Stable tag: 0.5
 
 This Plugin detects mobile browser and display the theme as the setting done from admin. Usefull for switch to Mobile Theme. 
 
 == Description ==
 
 Thanks to <a href="http://wework4web.com" target="_blank">wework4web</a> for supporting plugin developement.
+
+Update in 0.5
+* Added More Mobile User Agents
+* 3.4 Tested
 
 Update in 0.4
 * Added Support For Child Theme
