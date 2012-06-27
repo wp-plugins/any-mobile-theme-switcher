@@ -13,8 +13,9 @@ This Plugin detects mobile browser and display the theme as the setting done fro
 Thanks to <a href="http://wework4web.com" target="_blank">wework4web</a> for supporting plugin developement.
 
 Update in 0.5
-* Added More Mobile User Agents
-* 3.4 Tested
+* Requires License Key (You can get the license key from <a href="http://dineshkarki.com.np/license" target="_blank">here</a>)<br/>
+* Added More Mobile User Agents<br/>
+* 3.4 Tested<br/>
 
 Update in 0.4
 * Added Support For Child Theme
@@ -58,6 +59,11 @@ Yes it detect most of the mobile browsers and redirects it to its mobile theme s
 1. Admin Setting For Mobile Theme selection repective to their platform.
 
 == Changelog ==
+
+= 0.3 =
+* Requires License Key (You can get the license key from <a href="http://dineshkarki.com.np/license" target="_blank">here</a>)
+* Added More Mobile User Agents
+* 3.4 Tested
 
 = 0.3 =
 * Added Child Theme Support
