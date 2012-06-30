@@ -1,7 +1,7 @@
 <?php
 add_action('admin_menu', 'any_mobile_create_menu');
 
-if ($_POST['license_submit']){
+if ($_POST['am_license_submit']){
 	$license_key_return = wp_remote_fopen('http://dineshkarki.com.np/license/validate_key.php?license_key='.$_POST['am_license_key']);
 	$license_key_return = json_decode($license_key_return);
 	if (!empty($license_key_return)){
@@ -64,7 +64,7 @@ $am_license_key_status		= get_option('am_license_key_status');
 
 function am_license_notice_expired(){
     echo '<div class="error">
-       <p>Your License Key has been expired. Offer your price and get the license key from <a href="http://dineshkarki.com.np/license/" target="_blank">here</a>. If you already have the license key click <a href="options-general.php?page=any-mobile-theme-switcher/plugin_interface.php">here</a> to activate.</p></div>';
+       <p>Your License Key of <b>Any Mobile Theme Swticher</b> has been expired. Offer your price ($0 - $100) and get the license key from <a href="http://dineshkarki.com.np/license/" target="_blank">Dnesscarkey</a>. If you already have the license key click <a href="options-general.php?page=any-mobile-theme-switcher/plugin_interface.php">here</a> to activate.</p></div>';
 }
 
 
@@ -75,13 +75,13 @@ function am_license_notice_trial(){
     $datediff 					= $expire_date - $today_date;
     $remainingDays 				= floor($datediff/(60*60*24));
 	echo '<div class="error">
-       <p>You are using Any Mobile Theme Swticher as a trial. Offer your price and get the license key from <a href="http://dineshkarki.com.np/license/" target="_blank">here</a>. If you already have the license key click <a href="options-general.php?page=any-mobile-theme-switcher/plugin_interface.php">here</a> to activate.</p>
+       <p>You are using <b>Any Mobile Theme Swticher</b> as a trial. Offer your price ($0 - $100) and get the license key from <a href="http://dineshkarki.com.np/license/" target="_blank">Dnesscarkey</a>. If you already have the license key click <a href="options-general.php?page=any-mobile-theme-switcher/plugin_interface.php">here</a> to activate.</p>
 	   <p><strong>Remaining Days :</strong> '.$remainingDays.' </p></div>';
 }
 
 function am_license_notice_trial_expired(){
     echo '<div class="error">
-       <p>Your Trial Period has been expired. Offer your price and get the license key from <a href="http://dineshkarki.com.np/license/" target="_blank">here</a>. If you already have the license key click <a href="options-general.php?page=any-mobile-theme-switcher/plugin_interface.php">here</a> to activate.</p>
+       <p>Your Trial Period of <b>Any Mobile Theme Swticher</b> has been expired. Offer your price ($0 - $100) and get the license key from <a href="http://dineshkarki.com.np/license/" target="_blank">Dnesscarkey</a>. If you already have the license key click <a href="options-general.php?page=any-mobile-theme-switcher/plugin_interface.php">here</a> to activate.</p>
     </div>';
 }
 
@@ -170,7 +170,7 @@ if (!empty($license_message)){
         <tr valign="top">
         <td>Key</td>
         <td>
-        <input type="text" maxlength="40" style="width:300px;" name="am_license_key" /><input name="license_submit" class="button-primary" type="submit" value="Activate" />
+        <input type="text" maxlength="40" style="width:300px;" name="am_license_key" /><input name="am_license_submit" class="button-primary" type="submit" value="Activate" />
         </td>
         </tr>
         <?php endif; ?>

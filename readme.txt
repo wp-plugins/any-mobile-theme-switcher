@@ -9,12 +9,6 @@ This Plugin detects mobile browser and display the theme as the setting done fro
 
 == Description ==
 
-Thanks to <a href="http://wework4web.com" target="_blank">wework4web</a> for supporting plugin developement.
-
-Needs license key from Version 0.5. Offer your price (Free to $100) and get the license key from <a href="http://dineshkarki.com.np/license" target="_blank">here</a>
-
-Found many plugins for mobile theme switcher but they were not able to detect all the mobile browsers. And thought to add here to help others.
-
 Detects all the Mobile Browsers and loads the mobile theme as per your settings done in admin.
 
 * Iphone / Ipod
@@ -22,12 +16,19 @@ Detects all the Mobile Browsers and loads the mobile theme as per your settings 
 * Parm Os
 * Android
 * Windows Mobile
+* Blackberry
 * Opera Mini
 * Others Mobile Browsers
 
 You can select a different mobile theme for each mobile browser. You can select different mobile themes for each of the options above.
 
+Needs Activation Key from Version 0.5.
+Comes With 30 Days Trial Period.
+Offer your price ($0 to $100) and get the license key from <a href="http://dineshkarki.com.np/license" target="_blank">here</a>
+
 Please report any bugs @ http://dineshkarki.com.np/plugins/any-mobile-theme-switcher/report-bugs.
+
+Thanks to <a href="http://wework4web.com" target="_blank">wework4web</a> for supporting plugin developement.
 
 == Installation ==
 
@@ -48,7 +49,7 @@ Yes it detect most of the mobile browsers and redirects it to its mobile theme s
 == Changelog ==
 
 = 0.5 =
-* Requires License Key (Offer your price (Free - $100 and get the license key from <a href="http://dineshkarki.com.np/license" target="_blank">here</a>)
+* Requires License Key (Offer your price ($0 - $100) and get the license key from <a href="http://dineshkarki.com.np/license" target="_blank">here</a>)
 * Added More Mobile User Agents
 * 3.4 Tested
 
