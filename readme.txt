@@ -2,7 +2,7 @@
 Contributors: dnesscarkey
 Tags: mobile theme, switcher, mobile-browser
 Requires at least: 3.0.
-Tested up to: 3.4
+Tested up to: 3.4.1
 Stable tag: 0.5
 
 This Plugin detects mobile browser and display the theme as the setting done from admin. Usefull for switch to Mobile Theme. 
