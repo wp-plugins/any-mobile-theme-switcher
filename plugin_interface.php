@@ -1,90 +1,6 @@
 <?php
 add_action('admin_menu', 'any_mobile_create_menu');
 
-if ($_POST['am_license_submit']){
-	$license_key_return = wp_remote_fopen('http://dineshkarki.com.np/license/validate_key.php?license_key='.$_POST['am_license_key']);
-	$license_key_return = json_decode($license_key_return);
-	if (!empty($license_key_return)){
-		if ($license_key_return->status == 'success'){
-			update_option('am_license_key_status', 'activated');
-			update_option('am_license_key_valid_till', $license_key_return->valid_till);
-			update_option('am_license_key_code', $_POST['am_license_key']);
-		}
-		$license_message = $license_key_return->msg;
-		$license_status	 = $license_key_return->status;
-	} else {
-		$license_status	 = 'error';
-		$license_message = 'Sorry there was an error. Please try again.';
-	}
-	
-	if ($license_status	== 'error'){
-		$lic_notice_class	= 'error';
-	} else {
-		$lic_notice_class	= 'updated';
-	}	
-}
-
-$am_license_key_status		= get_option('am_license_key_status');
-$am_license_key_valid_till	= get_option('am_license_key_valid_till');
-
-switch ($am_license_key_status){
-	case 'trial':
-		if (strtotime($am_license_key_valid_till) <= strtotime(date('Y-m-d'))){
-			add_action('admin_notices', 'am_license_notice_trial_expired');
-			update_option('am_license_key_status', 'trial_expired');
-		} else {
-			add_action('admin_notices', 'am_license_notice_trial');
-		}	
-	break;
-	
-	case 'trial_expired':
-		add_action('admin_notices', 'am_license_notice_trial_expired');
-	break;
-	
-	case 'activated':
-		if (strtotime($am_license_key_valid_till) < strtotime(date('Y-m-d'))){
-			add_action('admin_notices', 'am_license_notice_expired');
-			update_option('am_license_key_status', 'expired');
-		}
-	break;
-	
-	case 'expired':
-		add_action('admin_notices', 'am_license_notice_expired');
-	break;
-	
-	default:
-		update_option('am_license_key_status', 'trial');
-		$trial_valid_till = date('Y-m-d', strtotime("+31 days"));
-		update_option('am_license_key_valid_till', $trial_valid_till);
-		update_option('am_license_key_code', '');
-		add_action('admin_notices', 'am_license_notice_trial');
-	break;	
-}
-$am_license_key_status		= get_option('am_license_key_status');
-
-function am_license_notice_expired(){
-    echo '<div class="error">
-       <p>Your License Key of <b>Any Mobile Theme Swticher</b> has been expired. Offer your price ($0 - $100) and get the license key from <a href="http://dineshkarki.com.np/license/" target="_blank">Dnesscarkey</a>. If you already have the license key click <a href="options-general.php?page=any-mobile-theme-switcher/plugin_interface.php">here</a> to activate.</p></div>';
-}
-
-
-function am_license_notice_trial(){
-    $am_license_key_valid_till	= get_option('am_license_key_valid_till');
-	$today_date 				= time();
-    $expire_date 				= strtotime($am_license_key_valid_till);
-    $datediff 					= $expire_date - $today_date;
-    $remainingDays 				= floor($datediff/(60*60*24));
-	echo '<div class="error">
-       <p>You are using <b>Any Mobile Theme Swticher</b> as a trial. Offer your price ($0 - $100) and get the license key from <a href="http://dineshkarki.com.np/license/" target="_blank">Dnesscarkey</a>. If you already have the license key click <a href="options-general.php?page=any-mobile-theme-switcher/plugin_interface.php">here</a> to activate.</p>
-	   <p><strong>Remaining Days :</strong> '.$remainingDays.' </p></div>';
-}
-
-function am_license_notice_trial_expired(){
-    echo '<div class="error">
-       <p>Your Trial Period of <b>Any Mobile Theme Swticher</b> has been expired. Offer your price ($0 - $100) and get the license key from <a href="http://dineshkarki.com.np/license/" target="_blank">Dnesscarkey</a>. If you already have the license key click <a href="options-general.php?page=any-mobile-theme-switcher/plugin_interface.php">here</a> to activate.</p>
-    </div>';
-}
-
 function any_mobile_create_menu() {
 	add_options_page('Any Mobile Theme', 'Any Mobile Theme', 'administrator', __FILE__, 'am_settings_page');
 	add_action('admin_init', 'register_mysettings_theme');
@@ -106,9 +22,6 @@ function register_mysettings_theme() {
 }
 
 function am_settings_page() {
-	global $am_license_key_status;
-	global $license_message;
-	global $lic_notice_class;
 	
 	$iphoneTheme 		= get_option('iphone_theme');
 	$ipadTheme			= get_option('ipad_theme');
@@ -150,38 +63,6 @@ fieldset.license_key { border:1px solid #060; padding:5px;-webkit-border-radius:
 fieldset.license_key legend{ color:#060; font-size:15px; font-weight:bold; padding-left:5px; padding-right:5px;}
 fieldset.license_key input[type=text]{ margin-right:20px;}
 </style>
-<?php
-
-
-if (!empty($license_message)){
-	echo '<div class="'.$lic_notice_class.'"><p>'.$license_message.'</p></div>';
-}
-?>
-
-<fieldset class="license_key">
-<legend>License Key</legend>
-<form method="post" action="">
-<table class="form-table">
-        <tr valign="top">
-        <td>Status : </td><td><strong><?php echo ucfirst(str_replace('_',' ', $am_license_key_status)); ?></strong></td>
-        </tr>
-        
-		<?php if ($am_license_key_status != 'activated'): ?>
-        <tr valign="top">
-        <td>Key</td>
-        <td>
-        <input type="text" maxlength="40" style="width:300px;" name="am_license_key" /><input name="am_license_submit" class="button-primary" type="submit" value="Activate" />
-        </td>
-        </tr>
-        <?php endif; ?>
-        
-        
-</table>
-</form>
-</fieldset>
-
-<br/>
-
 
     <h3>Select Theme For Devices</h3>
     <form method="post" action="options.php">

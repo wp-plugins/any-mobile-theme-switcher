@@ -79,28 +79,26 @@ $accept           = $_SERVER['HTTP_ACCEPT']; // get the content accept value - t
 	
 } // ends the switch 
 
-$am_license_key_status		= get_option('am_license_key_status');
-if (($am_license_key_status != 'trial_expired') && ($am_license_key_status != 'expired')){
-	//Force Theme Display request from visitor.
-	if ($_GET['am_force_theme_layout']){
-		$_SESSION['am_force_theme_layout']	=	$_GET['am_force_theme_layout'];
-	}
-	
-	if (isset($_SESSION['am_force_theme_layout'])){ //IF USER FORCE FOR THE THEME
-		if ($_SESSION['am_force_theme_layout'] == 'mobile'){ // IF FORCED THEME IS MOBILE
-			$mobile_browser = get_option('iphone_theme');
-			add_filter('stylesheet', 'loadMobileStyle');
-			add_filter('template', 'loadMobileTheme');
-			$shown_theme = 'mobile';
-		}	
-	} else { // NORMAL THEME [PLUGIN DEFAULT]
-		if (!empty($mobile_browser)){
-			add_filter('stylesheet', 'loadMobileStyle');
-			add_filter('template', 'loadMobileTheme');
-			$shown_theme = 'mobile';
-		}
+//Force Theme Display request from visitor.
+if ($_GET['am_force_theme_layout']){
+	$_SESSION['am_force_theme_layout']	=	$_GET['am_force_theme_layout'];
+}
+
+if (isset($_SESSION['am_force_theme_layout'])){ //IF USER FORCE FOR THE THEME
+	if ($_SESSION['am_force_theme_layout'] == 'mobile'){ // IF FORCED THEME IS MOBILE
+		$mobile_browser = get_option('iphone_theme');
+		add_filter('stylesheet', 'loadMobileStyle');
+		add_filter('template', 'loadMobileTheme');
+		$shown_theme = 'mobile';
+	}	
+} else { // NORMAL THEME [PLUGIN DEFAULT]
+	if (!empty($mobile_browser)){
+		add_filter('stylesheet', 'loadMobileStyle');
+		add_filter('template', 'loadMobileTheme');
+		$shown_theme = 'mobile';
 	}
 }
+
 
 function loadMobileStyle(){
 	global $mobile_browser;
