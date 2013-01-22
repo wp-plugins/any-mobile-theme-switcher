@@ -22,6 +22,8 @@ Detects all the Mobile Browsers and loads the mobile theme as per your settings 
 
 You can select a different mobile theme for each mobile browser. You can select different mobile themes for each of the options above.
 
+Want Mobile Theme ? Get it from <a href="http://dineshkarki.com.np/wppack-theme">here</a>.
+
 Please visit our <a href="http://dineshkarki.com.np/forums/forum/mobile-theme-switcher" target="_blank">support forum</a> for any issues.
 
 
