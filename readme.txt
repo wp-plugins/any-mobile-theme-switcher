@@ -3,7 +3,7 @@ Contributors: dnesscarkey
 Tags: mobile theme, mobile theme switcher, mobile browser detect, mobile detect, theme redirection based on mobile device
 Requires at least: 3.0.
 Tested up to: 3.5.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 This Plugin detects mobile browser and display the theme as the setting done from admin. Usefull for switch to Mobile Theme. 
 
@@ -45,6 +45,10 @@ Yes it detect most of the mobile browsers and redirects it to its mobile theme s
 1. Admin Setting For Mobile Theme selection repective to their platform.
 
 == Changelog ==
+
+= 1.1 =
+* User Agents Update
+* Tested With 3.5.1
 
 = 1.0 =
 * Added option for Andriod Tab

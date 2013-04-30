@@ -4,7 +4,7 @@ Plugin Name: Any Mobile Theme Switcher
 Plugin URI: http://dineshkarki.com.np/any-mobile-theme-switcher
 Description: This plugin allow you to detect all mobile platform and switch the theme. Supports most of the mobile platform including iphone, ipad, ipod, windows mobile, parm os, blackberry, android, andriod tab.
 Author: Dinesh Karki
-Version: 1.0
+Version: 1.1
 Author URI: http://www.dineshkarki.com.np
 */
 
