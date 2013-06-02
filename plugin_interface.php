@@ -1,5 +1,19 @@
 <?php
 add_action('admin_menu', 'any_mobile_create_menu');
+add_action('admin_notices', 'amts_pro_notification');
+
+
+if ($_GET['hidemsg'] == 1){
+	update_option('amts_hide_pro_notice','yes');
+}
+
+function amts_pro_notification(){
+	if (get_option('amts_hide_pro_notice') != 'yes'){
+		 echo '<div class="updated">
+       <p><b>Any Mobile Theme Swticher Pro</b> now works with <b>W3 Total Cache</b>. Click <a href="http://dnesscarkey.com/any-mobile-theme-switcher-pro/" target="_blank">here</a> for details.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="options-general.php?pageany-mobile-theme-switcher-pro/plugin_interface.php&hidemsg=1">Hide This Message</a></p>
+	   </div>';
+	}
+}
 
 function any_mobile_create_menu() {
 	add_options_page('Any Mobile Theme', 'Any Mobile Theme', 'administrator', __FILE__, 'am_settings_page');

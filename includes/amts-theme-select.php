@@ -147,7 +147,7 @@ natcasesort($themeNames);
         </tr>
         
         <tr valign="top">
-        <th scope="row">Parm Os Theme</th>
+        <th scope="row">Palm Os Theme</th>
         <td>
         	<select name="parm_os_theme">
 			 <?php 
