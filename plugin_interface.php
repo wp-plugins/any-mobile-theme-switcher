@@ -10,7 +10,7 @@ if ($_GET['hidemsg'] == 1){
 function amts_pro_notification(){
 	if (get_option('amts_hide_pro_notice') != 'yes'){
 		 echo '<div class="updated">
-       <p><b>Any Mobile Theme Swticher Pro</b> now works with <b>W3 Total Cache</b>. Click <a href="http://dnesscarkey.com/any-mobile-theme-switcher-pro/" target="_blank">here</a> for details.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="options-general.php?pageany-mobile-theme-switcher-pro/plugin_interface.php&hidemsg=1">Hide This Message</a></p>
+       <p><b>Any Mobile Theme Swticher Pro</b> now works with <b>W3 Total Cache</b>, have support for <b>QR code</b> and can serve different <b>Home Page</b> based on mobile devices.<br/>Click <a href="http://dnesscarkey.com/any-mobile-theme-switcher-pro/" target="_blank">here</a> for details.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="options-general.php?pageany-mobile-theme-switcher-pro/plugin_interface.php&hidemsg=1">Hide This Message</a></p>
 	   </div>';
 	}
 }
@@ -36,6 +36,7 @@ function register_mysettings_theme() {
 }
 
 function am_settings_page() {	
+	global $amts_force_param;
 	include('includes/amts-header.php');
 	include('includes/amts-theme-select.php');
 	include('includes/amts-force-switch.php');

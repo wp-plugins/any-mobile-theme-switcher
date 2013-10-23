@@ -1,9 +1,9 @@
 === Any Mobile Theme Switcher ===
 Contributors: dnesscarkey
-Tags: mobile theme, mobile theme switcher, mobile browser detect, mobile detect, theme redirection based on mobile device
+Tags: mobile theme, mobile theme switcher, mobile browser detect, mobile detect, theme redirection based on mobile device, mobile detect, user agent detect, mobile user agent
 Requires at least: 3.0.
-Tested up to: 3.5.1
-Stable tag: 1.3
+Tested up to: 3.6.1
+Stable tag: 1.4
 
 This Plugin detects mobile browser and display the theme as the setting done from admin. Usefull for switch to Mobile Theme. 
 
@@ -23,7 +23,14 @@ Detects all the Mobile Browsers and loads the mobile theme as per your settings 
 
 You can select a different mobile theme for each mobile browser. You can select different mobile themes for each of the options above.
 
-Any Mobile Theme Switcher Pro now works with W3 Total Cache. Click <a href="http://goo.gl/j1a2w" title="Any Mobile Theme Switcher Pro" target="_blank">here</a> for details.
+Any Mobile Theme Switcher Pro Features
+
+* Works With W3 Total Cache
+* Serve seprate home page for mobile devices.
+* QR code for mobile bookmarking.
+* Better Mobile Detection.
+
+Click <a href="http://goo.gl/j1a2w" title="Any Mobile Theme Switcher Pro" target="_blank">here</a> for details about Any Mobile Theme Swticher
 
 Want Mobile Theme ? Get it from <a href="http://goo.gl/eWXZp">here</a>.
 
@@ -51,6 +58,9 @@ Yes, the pro version works with W3 Total Cache. Click <a href="http://goo.gl/j1a
 1. Admin Setting For Mobile Theme selection repective to their platform.
 
 == Changelog ==
+
+= 1.4 =
+* Use of Force Layout GET Parameter from wp-config.php
 
 = 1.3 =
 * Use of Cookie inplace of session.

@@ -4,7 +4,7 @@ Plugin Name: Any Mobile Theme Switcher
 Plugin URI: http://dineshkarki.com.np/any-mobile-theme-switcher
 Description: This plugin allow you to detect all mobile platform and switch the theme. Supports most of the mobile platform including iphone, ipad, ipod, windows mobile, parm os, blackberry, android, andriod tab.
 Author: Dinesh Karki
-Version: 1.3
+Version: 1.4
 Author URI: http://www.dineshkarki.com.np
 */
 
@@ -13,12 +13,15 @@ Author URI: http://www.dineshkarki.com.np
 $amts_mobile_browser 	= '';
 $amts_status 			= '';
 $amts_shown_theme 		= '';
+$amts_force_param 		= defined('AMTS_FORCE_FLAG')?AMTS_FORCE_FLAG:'am_force_theme_layout';
+
 
 add_action('plugins_loaded', 'amts_start', 1);
 function amts_start(){
 	global $amts_mobile_browser;
 	global $amts_status;
 	global $amts_shown_theme;
+	global $amts_force_param;
 	
 	$time = '0';
 	$url_path = '/';
@@ -34,13 +37,13 @@ function amts_start(){
 		$forceLayout = $_COOKIE['am_force_theme_layout'];
 	}
 	
-	if (isset($_GET['am_force_theme_layout'])){
-		if ($_GET['am_force_theme_layout'] == 'mobile'){
+	if (isset($_GET[$amts_force_param])){
+		if ($_GET[$amts_force_param] == 'mobile'){
 			$forceLayout	= 'mobile';
-			setcookie('am_force_theme_layout', $_GET['am_force_theme_layout'], $time, $url_path);
+			setcookie('am_force_theme_layout', $_GET[$amts_force_param], $time, $url_path);
 		} else {
 			$forceLayout	= 'desktop';
-			setcookie('am_force_theme_layout', $_GET['am_force_theme_layout'], $time, $url_path);	
+			setcookie('am_force_theme_layout', $_GET[$amts_force_param], $time, $url_path);	
 		}
 	}
 	
@@ -87,12 +90,13 @@ function loadMobileTheme(){
 function show_theme_switch_link_func( $atts ){
  	global $amts_shown_theme;
 	global $amts_status;
+	global $amts_force_param;
 	$desktopSwitchLink	= get_option('show_switch_link_for_desktop');
 	if ($amts_shown_theme){
-		$return = '<a rel="external" data-ajax="false" href="'.get_bloginfo('url').'?am_force_theme_layout=desktop" class="am-switch-btn godesktop">'.get_option('desktop_view_theme_link_text').'</a>';		
+		$return = '<a rel="external" data-ajax="false" href="'.get_bloginfo('url').'?'.$amts_force_param.'=desktop" class="am-switch-btn godesktop">'.get_option('desktop_view_theme_link_text').'</a>';		
 	} else {
 		if ((!empty($amts_status)) || ($desktopSwitchLink == 'yes')){
-			$return = '<a href="'.get_bloginfo('url').'?am_force_theme_layout=mobile" class="am-switch-btn gomobile">'.get_option('mobile_view_theme_link_text').'</a>';
+			$return = '<a href="'.get_bloginfo('url').'?'.$amts_force_param.'=mobile" class="am-switch-btn gomobile">'.get_option('mobile_view_theme_link_text').'</a>';
 		}
 	}
 	return $return;
