@@ -38,7 +38,7 @@ Want Mobile Theme ? Get it from <a href="http://goo.gl/eWXZp">here</a>.
 Please visit our own <a href="http://dineshkarki.com.np/forums/forum/mobile-theme-switcher" target="_blank">support forum</a> for any issues. We don't respond support ticket created here. 
 
 <strong>Installation Video (Thanks to Scott Wiseman)<strong>
-<iframe width="560" height="315" src="//www.youtube.com/embed/OqXhTW9FpRI?rel=0" frameborder="0" allowfullscreen></iframe>
+[youtube http:////www.youtube.com/embed/OqXhTW9FpRI]
 
 == Installation ==
 
