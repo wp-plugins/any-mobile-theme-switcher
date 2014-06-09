@@ -33,6 +33,7 @@ function register_mysettings_theme() {
 	register_setting('am-settings-group', 'mobile_view_theme_link_text');
 	register_setting('am-settings-group', 'desktop_view_theme_link_text');
 	register_setting('am-settings-group', 'show_switch_link_for_desktop');
+	register_setting('am-settings-group', 'forced_layout_expire_time');
 }
 
 function custom_get_themelist(){

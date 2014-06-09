@@ -2,8 +2,8 @@
 Contributors: dnesscarkey
 Tags: mobile theme, mobile theme switcher, mobile browser detect, mobile detect, theme redirection based on mobile device, mobile detect, user agent detect, mobile user agent
 Requires at least: 3.0.
-Tested up to: 3.8.1
-Stable tag: 1.5
+Tested up to: 3.9.1
+Stable tag: 1.6
 
 This Plugin detects mobile browser and display the theme as the setting done from admin. Usefull for switch to Mobile Theme. 
 
@@ -31,14 +31,12 @@ Any Mobile Theme Switcher Pro Features
 * Better Mobile Detection.
 * Click To Call to phone numbers.
 
-Click <a href="http://goo.gl/j1a2w" title="Any Mobile Theme Switcher Pro" target="_blank">here</a> for details about Any Mobile Theme Swticher
-
-Want Mobile Theme ? Get it from <a href="http://goo.gl/eWXZp">here</a>.
+Click <a href="http://goo.gl/j1a2w" title="Any Mobile Theme Switcher Pro" target="_blank">here</a> for details about Any Mobile Theme Swticher Pro
 
 Please visit our own <a href="http://dineshkarki.com.np/forums/forum/mobile-theme-switcher" target="_blank">support forum</a> for any issues. We don't respond support ticket created here. 
 
 <strong>Installation Video (Thanks to Scott Wiseman)</strong>
-[youtube http://www.youtube.com/embed/OqXhTW9FpRI]
+[youtube https://www.youtube.com/watch?v=OqXhTW9FpRI]
 
 == Installation ==
 
@@ -50,7 +48,7 @@ Please visit our own <a href="http://dineshkarki.com.np/forums/forum/mobile-them
 
 = Does it detect all browsers ? =
 
-Yes it detect most of the mobile browsers and redirects it to its mobile theme set from admin settings.
+Yes it detects most of the mobile browsers and redirects it to its mobile theme set from admin settings.
 
 = Does it works with W3 Total Cache ? =
 
@@ -61,6 +59,8 @@ Yes, the pro version works with W3 Total Cache. Click <a href="http://goo.gl/j1a
 1. Admin Setting For Mobile Theme selection repective to their platform.
 
 == Changelog ==
+= 1.6 =
+* Added Remember forced layout till option.
 
 = 1.5 =
 * Removed depricated functions.

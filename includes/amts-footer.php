@@ -47,24 +47,7 @@
                 </tr>
                 </tbody>
             </table>
-            <br/>
             
-            <table class="wp-list-table widefat fixed bookmarks">
-            	<thead>
-                <tr>
-                	<th>WP Pack Mobile Theme</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                	<td>
-                    <a href="http://goo.gl/eWXZp" target="_blank"><img src="<?php echo plugins_url('any-mobile-theme-switcher/img/wppacktheme.png') ?>" alt="WP Pack Theme" /></a>
-<h2 style="text-align:center;"><a href="http://goo.gl/eWXZp" target="_blank">Click For Details</a></h2>
-                    
-                    </td>
-                </tr>
-                </tbody>
-            </table>
             <br/>
             
            
@@ -91,6 +74,19 @@
                 </tbody>
             </table>
             <br/>
+            <table class="wp-list-table widefat fixed bookmarks">
+            	<thead>
+                <tr>
+                	<th>Facebook</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                	<td><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FDnessCarKey%2F77553779916&amp;width=185&amp;height=180&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color=%23f9f9f9&amp;header=false&amp;appId=215419415167468" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:240px; height:180px;" allowTransparency="true"></iframe>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </td>
     </tr>
 </table>
