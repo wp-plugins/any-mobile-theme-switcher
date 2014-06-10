@@ -36,7 +36,7 @@ Click <a href="http://goo.gl/j1a2w" title="Any Mobile Theme Switcher Pro" target
 Please visit our own <a href="http://dineshkarki.com.np/forums/forum/mobile-theme-switcher" target="_blank">support forum</a> for any issues. We don't respond support ticket created here. 
 
 <strong>Installation Video (Thanks to Scott Wiseman)</strong>
-[youtube https://www.youtube.com/watch?v=OqXhTW9FpRI]
+[youtube http://www.youtube.com/watch?v=OqXhTW9FpRI]
 
 == Installation ==
 
@@ -49,6 +49,14 @@ Please visit our own <a href="http://dineshkarki.com.np/forums/forum/mobile-them
 = Does it detect all browsers ? =
 
 Yes it detects most of the mobile browsers and redirects it to its mobile theme set from admin settings.
+
+= Can i place Switch to Desktop/Mobile link in my theme ? =
+
+Yes, you can place the Switch to Desktop/Mobile theme from Shortcode or can make a menu item with the link as well. Please follow the instructions available in plugin's settings page.
+
+= Do i get a pre build mobile theme with this plugin ? =
+
+No, this is just a theme switcher plugin and we don't include any mobile theme like other plugin does.
 
 = Does it works with W3 Total Cache ? =
 
